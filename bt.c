@@ -44,10 +44,37 @@ void inorder_traversal(node n){
     inorder_traversal(n -> right);
 }
 
+// creating the preorder traversal.....
+void preorder_traversal(node n){
+    if(n == NULL){
+        return;
+    }
+    // root -> left -> right !!
+    printf("%d ",n->data);
+    preorder_traversal(n -> left);
+    preorder_traversal(n -> right);
+}
+
+// creating the postorder traversal.....
+void postorder_traversal(node n){
+    if(n == NULL){
+        return;
+    }
+    // left -> right -> root !!
+    postorder_traversal(n -> left);
+    postorder_traversal(n -> right);
+    printf("%d ",n->data);
+}
+
 // creating the main function....
 int main(void){
     node root = NULL;
     root = creat_tree();
+    printf("Inorder Traversal: ");
     inorder_traversal(root);
+    printf("Preorder Traversal: ");
+    preorder_traversal(root);
+    printf("Postorder Traversal: ");
+    postorder_traversal(root);
     return 0;
 }
