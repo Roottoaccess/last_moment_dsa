@@ -78,5 +78,7 @@ int main(void){
     head = pop(head);
     display_stack(head);
     peek(head);
+    head = push(head , 12);
+    display_stack(head);
     return 0;
 }
